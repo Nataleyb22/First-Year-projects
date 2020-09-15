@@ -1,0 +1,229 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Testing a model for seismic waves\n",
+    "\n",
+    "In this notebook you will collect data in a list, use a \"for loop\" to perform calculations on that data, and make a graph to test the accuracy of a model for the Earth's interior.\n",
+    "\n",
+    "Complete the section based on which group you were assigned to (\"Seismologists\" or \"Theoreticians\"):"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "7\n",
+      "8\n",
+      "9\n",
+      "10\n",
+      "11\n"
+     ]
+    }
+   ],
+   "source": [
+    "#sample for loop\n",
+    "deck=[2,3,4,5,6]\n",
+    "for i in deck:\n",
+    "    print(i+5)\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "5\n",
+      "6\n",
+      "7\n",
+      "3\n",
+      "4\n"
+     ]
+    }
+   ],
+   "source": [
+    "for i in deck:\n",
+    "    if i<5:\n",
+    "        print(i+3)\n",
+    "    else:\n",
+    "        print(i-2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import matplotlib.pyplot\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Theoreticians\n",
+    "The theoreticians drew lines representing 12 hypothetical seismometer recording stations on an Earth cross-section model, including both very close stations and very distant stations.\n",
+    "\n",
+    "A protractor was then used to calculate the geocentric angle of each station (the distance from the epicenter in degrees):"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "<img src=\"https://web.ics.purdue.edu/~braile/edumod/surfwav/surfwav_files/image013.gif\" alt=\"Measuring the geocentric angles of the seismoc stations\" style=\"width: 350px;\"/>"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# This list contains the angles from the center of the earth measured for each seismic station in degrees\n",
+    "degrees_t = [15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 165, 180]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# This list contains the lengths of these paths in centimeters (cm)\n",
+    "distance_t = [5.8, 10.7, 15.7, 20, 25, 27.75, 32, 34, 36, 38, 39, 40]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Now, create an empty list called \"travel_time_t\" and use a \"for loop\" to append the travel time in minutes for each seismic station using the lists above and the following facts:\n",
+    "- Seismic waves travel 320 km through the Earth for every 1 cm measured\n",
+    "- Seismic waves travel 11 km per second\n",
+    "- There are 60 seconds in a minute"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Seismologists\n",
+    "Explore the seismograms recorded by the different seismic stations around the world [by clicking here.](http://ds.iris.edu/seismon/recsec/tsplotForID.phtml?evid=2843110&useCache=1&epo=0&caller=map)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# This list contains the station distances from the earthquake epicenter in degrees (found on the x-axis)\n",
+    "degrees_s = [9, 24, 39, 50, 63, 76, 89, 100, 111, 124, 138, 150, 163, 175]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# This list contains the # of minutes after 6 AM when the seismic wave was detected (found on the y-axis)\n",
+    "minutes = [37, 39.5, 41.5, 43, 45, 46, 47, 48, 49, 53.5, 54, 54, 54, 54.5]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Create an empty list called \"travel_time_s\" and then use a \"for loop\" to append the number of minutes it took each seismic wave to reach the station. Remember, that the earthquake occured at 6:34 AM."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[3, 5.5, 7.5, 9, 11, 12, 13, 14, 15, 19.5, 20, 20, 20, 20.5]\n"
+     ]
+    }
+   ],
+   "source": [
+    "travel_time_s=[]\n",
+    "for i in minutes:\n",
+    "    travel_time_s.append(i-34)\n",
+    "print(travel_time_s)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Share your data!\n",
+    "Theoreticians should send their travel_time list to a seismologist at their table and vice versa (you can send it as a direct message on Slack)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Evaluate the model\n",
+    "Create a graph using plt.scatter() that compares the distance from the epicenter in degrees (x data) vs the travel time in minutes for seismic waves (y data) for both the theoretical data and the seismologist's data:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "p"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
